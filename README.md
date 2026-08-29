@@ -29,10 +29,32 @@ dieselbe Konfiguration in beiden:
 
 `.vscode/sftp.json` ist in `.gitignore` und wird nie mit committet, da es Zugangsdaten enthält.
 
+## Automatisches Deployment (GitHub Actions)
+
+Jeder Push auf `main` lädt die Seite automatisch per SFTP auf den Webspace hoch
+(`.github/workflows/deploy.yml`, Action `wlixcc/SFTP-Deploy-Action`).
+
+Einmalig einrichten – im Repo unter **Settings → Secrets and variables → Actions → New repository
+secret** folgende Secrets anlegen (Werte trägt nur der Repo-Owner ein, nie im Code/Chat):
+
+| Secret            | Beispiel               |
+|-------------------|-------------------------|
+| `SFTP_HOST`       | `ssh.deinhoster.de`     |
+| `SFTP_PORT`       | `22`                    |
+| `SFTP_USERNAME`   | dein SFTP-Benutzername  |
+| `SFTP_PASSWORD`   | dein SFTP-Passwort      |
+| `SFTP_REMOTE_PATH`| z.B. `/httpdocs`        |
+
+Danach läuft der Workflow automatisch bei jedem Push auf `main` (Fortschritt unter dem Tab
+**Actions** im Repo einsehbar) oder manuell über **Actions → Deploy via SFTP → Run workflow**.
+
 ## Offene Punkte
 
-- [ ] Bilddateien `volle-pulle-ki.png` und `keine-angst-vor-ki.png` in `images/` ablegen
+- [ ] Bilddateien `volle-pulle-ki.png`, `keine-angst-vor-ki.png` und das Logo in `images/` ablegen
 - [ ] Impressum-Text von welter-services.de/impressum übernehmen
 - [ ] Datenschutz-Text von welter-services.de/datenschutz übernehmen
-- [ ] `.vscode/sftp.json` lokal aus der `.example`-Datei mit echten Zugangsdaten anlegen
+- [ ] `.vscode/sftp.json` lokal aus der `.example`-Datei mit echten Zugangsdaten anlegen (optional,
+      für manuellen Upload zusätzlich zum Auto-Deploy)
+- [ ] GitHub Secrets `SFTP_HOST`, `SFTP_PORT`, `SFTP_USERNAME`, `SFTP_PASSWORD`, `SFTP_REMOTE_PATH`
+      im Repo hinterlegen, damit der Auto-Deploy-Workflow funktioniert
 - [ ] Später: Design/Feinschliff
