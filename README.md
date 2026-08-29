@@ -9,7 +9,10 @@ KI im Vertrieb). Reines statisches HTML/CSS, keine Build-Tools nötig.
 - `impressum.html` – Platzhalter, Text folgt aus welter-services.de/impressum
 - `datenschutz.html` – Platzhalter, Text folgt aus welter-services.de/datenschutz
 - `style.css` – gemeinsames Stylesheet
-- `images/` – Ablage für die beiden Grafiken (siehe `images/README.md`)
+
+Bilder liegen **nicht** in diesem Repo, sondern direkt im `/Bilder`-Ordner auf dem Webspace
+(`https://www.welter-services.de/WS-Ki/Bilder/...`) und werden per SFTP-Client separat gepflegt.
+`index.html` verlinkt sie über die volle URL.
 
 ## Lokal ansehen
 
@@ -50,7 +53,6 @@ Danach läuft der Workflow automatisch bei jedem Push auf `main` (Fortschritt un
 
 ## Offene Punkte
 
-- [ ] Bilddateien `volle-pulle-ki.png`, `keine-angst-vor-ki.png` und das Logo in `images/` ablegen
 - [ ] Impressum-Text von welter-services.de/impressum übernehmen
 - [ ] Datenschutz-Text von welter-services.de/datenschutz übernehmen
 - [ ] `.vscode/sftp.json` lokal aus der `.example`-Datei mit echten Zugangsdaten anlegen (optional,
