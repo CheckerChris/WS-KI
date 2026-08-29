@@ -50,6 +50,16 @@ a:hover { text-decoration: underline; }
 }
 .site-header nav a:first-child { margin-left: 0; }
 
+.header-image {
+  padding-top: 16px;
+}
+.header-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
 .hero {
   background: var(--dark);
   color: #fff;
