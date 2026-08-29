@@ -1,0 +1,2 @@
+# Lokale SFTP-Zugangsdaten - niemals committen
+.vscode/sftp.json

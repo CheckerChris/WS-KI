@@ -1,0 +1,17 @@
+{
+  "name": "WS-KI Webspace",
+  "host": "DEIN-FTP-HOST.de",
+  "protocol": "sftp",
+  "port": 22,
+  "username": "DEIN-BENUTZERNAME",
+  "remotePath": "/httpdocs",
+  "uploadOnSave": false,
+  "useTempFile": false,
+  "openSsh": false,
+  "ignore": [
+    ".vscode",
+    ".git",
+    ".gitignore",
+    "*.md"
+  ]
+}
